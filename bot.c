@@ -1,16 +1,6 @@
 /********************************************
       Bot (Jugador Virtual)  de Nk-Tron
 *********************************************
-Trabajo Practico 4
-
-Alumnos:
-Silvina Torres  	Dni: 30.724.953
-Marcos Wolff		Dni: 31.925.539
-Nicolas Cerrini Madrid	Dni: 32.111.349
-Maximiliano Almada	Dni: 29.524.290
-
-Comision Martes Noche - 2006
-
 Archivo: bot.c
 Descripcion del archivo:
 Define el proceso de cliente virtual del juego.

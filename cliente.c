@@ -1,16 +1,6 @@
 /********************************************
 	Cliente de Nk-Tron
 *********************************************
-Trabajo Practico 4
-
-Alumnos:
-Silvina Torres          Dni: 30.724.953
-Marcos Wolff            Dni: 31.925.539
-Nicolas Cerrini Madrid  Dni: 32.111.349
-Maximiliano Almada      Dni: 29.524.290
-
-Comision Martes Noche - 2006
-
 Archivo: cliente.c
 Descripcion del archivo:
 Define el proceso de cliente real del juego.
@@ -34,7 +24,7 @@ Debe ser ejecutado por cada jugador que quiera incorporarse al juego
 //#include "beep.c"
 
 /* Puerto a utilizar */
-#define PUERTO 9999
+#define PUERTO 9998
 #define EBUSY 16
 
 
@@ -87,7 +77,7 @@ int main (int argc,char* argv[])
 
 	pakout.cabecera='N';
 	strcpy(pakout.nombre,nombre);	
-	fdsocket=conectar(argv[1],9999);
+	fdsocket=conectar(argv[1],PUERTO);
 	//conectarse
 	if(fdsocket==-1)
 	{	endwin();

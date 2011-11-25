@@ -1,16 +1,6 @@
 /********************************************
 	Servidor de Nk-Tron
 *********************************************
-Trabajo Practico 4
-
-Alumnos:
-Silvina Torres          Dni: 30.724.953
-Marcos Wolff            Dni: 31.925.539
-Nicolas Cerrini Madrid  Dni: 32.111.349
-Maximiliano Almada      Dni: 29.524.290
-
-Comision Martes Noche - 2006
-
 Archivo: servidor.c
 Descripcion del archivo:
 Codigo fuente del proceso servidor del juego.
@@ -31,7 +21,7 @@ Debe ejecutarse una instancia en alguna maquina de la red para poder organizar e
 #include <pthread.h>
 #include <sys/types.h>
 
-//#define PUERTO 9999
+#define PUERTO 9998
 #define TAM_BUFFER 1024
 #define COLA 20
 
@@ -164,7 +154,7 @@ int main (int argc, char* argv[])
 	{	strcpy(vnombres[i],"NULL");
 		puntajes[i]=0;
 	}
-	fdlisten=escuchar(9999);
+	fdlisten=escuchar(PUERTO);
 	if(fdlisten==-1)
 	{	printf ("No se pudo abrir puerto para escuchar\n");
 		return -1;;
@@ -197,7 +187,9 @@ int main (int argc, char* argv[])
 		cont_clientes++;
 		error=pthread_create (&clientes[cont_clientes-1],NULL,atender,(void *)&fdcliente);
 		if (error)
-			printf ("no se pudo crear el hilo %d",clientes[cont_clientes-1]);		
+			//printf ("no se pudo crear el hilo %ld", (long)clientes[cont_clientes-1]);		
+			//printf ("no se pudo crear el hilo %d", clientes[cont_clientes-1]);		
+			printf ("no se pudo crear el hilo %d", cont_clientes-1);		
 	}
 
 	sleep(2);
